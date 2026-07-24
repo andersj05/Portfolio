@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Notes from Anders Jensen on quantitative finance, models, markets, software, and learning."
+    />
+    <meta name="theme-color" content="#11150f" />
+    <meta property="og:title" content="Notes - Anders Jensen" />
+    <meta
+      property="og:description"
+      content="A notebook about quantitative finance, models, markets, software, and learning."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://andersj.dev/blog.html" />
+    <meta property="og:image" content="https://andersj.dev/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://andersj.dev/og.png" />
+    <title>Notes - Anders Jensen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Anders Jensen home">
+        <span class="brand-mark">AJ</span>
+        <span class="brand-year">/ 26</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html#profile">Profile</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="#notes" aria-current="page">Notes</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="content">
+      <section class="blog-hero" id="top" aria-labelledby="blog-title">
+        <p class="eyebrow">
+          <span class="status-dot" aria-hidden="true"></span>
+          Field notes / Working ideas
+        </p>
+        <h1 id="blog-title">
+          Thinking in public,<br />
+          <em>carefully.</em>
+        </h1>
+        <div class="blog-intro">
+          <p>
+            A notebook for ideas about quantitative finance, mathematical
+            models, software, and the process of learning how systems behave.
+          </p>
+          <p class="blog-intro-meta">Raleigh / New York · Est. 2026</p>
+        </div>
+      </section>
+
+      <section
+        class="notes-index"
+        id="notes"
+        aria-labelledby="notes-index-title"
+      >
+        <header class="notes-index-header">
+          <p class="section-index">Archive / 000</p>
+          <h2 id="notes-index-title">The notebook is open.</h2>
+        </header>
+
+        <article class="empty-note">
+          <p class="empty-note-number" aria-hidden="true">00</p>
+          <div>
+            <p class="card-kicker">First entry in progress</p>
+            <h3>No published notes yet.</h3>
+            <p>
+              I&apos;m setting this space aside for work worth revisiting:
+              arguments that need sharpening, models that deserve a closer look,
+              and practical lessons from building analytical systems.
+            </p>
+          </div>
+          <span class="empty-note-status">Drafting</span>
+        </article>
+      </section>
+
+      <section class="writing-themes" aria-labelledby="themes-title">
+        <header class="section-header">
+          <p class="section-index">On the desk</p>
+          <h2 id="themes-title">Themes I keep returning to</h2>
+        </header>
+        <div class="theme-grid">
+          <article>
+            <p class="theme-code">01 / QF</p>
+            <h3>Models &amp; markets</h3>
+            <p>
+              Calibration, simulation, derivatives, risk, and the assumptions
+              that sit between a model and the world.
+            </p>
+          </article>
+          <article>
+            <p class="theme-code">02 / DS</p>
+            <h3>Data systems</h3>
+            <p>
+              Research pipelines, analytical tooling, and ways to make messy
+              information more dependable.
+            </p>
+          </article>
+          <article>
+            <p class="theme-code">03 / LN</p>
+            <h3>Learning notes</h3>
+            <p>
+              Mathematics, computer science, books, and useful ideas captured
+              before they disappear.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="blog-contact" aria-labelledby="blog-contact-title">
+        <p class="section-index">Continue the conversation</p>
+        <h2 id="blog-contact-title">Have a counterpoint?</h2>
+        <a class="contact-email" href="mailto:apjensen[dot]ncsu[dot]edu">
+          Send me a note <span aria-hidden="true">↗</span>
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span data-current-year>2026</span> Anders Jensen</p>
+      <p>Notes / models / observations</p>
+      <a href="index.html">Return home ↗</a>
+    </footer>
+
+    <script>
+      document.querySelectorAll('[data-current-year]').forEach((element) => {
+        element.textContent = new Date().getFullYear();
+      });
+    </script>
+  </body>
+</html>
