@@ -4,7 +4,9 @@
   "private": true,
   "description": "Personal portfolio for Anders Jensen.",
   "scripts": {
+    "build": "node scripts/build.mjs",
     "dev": "http-server . -p 4173 -c-1",
+    "deploy:dry-run": "wrangler deploy --dry-run",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "npm run lint:html && npm run lint:css",
@@ -12,7 +14,7 @@
     "lint:css": "stylelint \"**/*.css\"",
     "test": "node --test tests/site-structure.test.mjs",
     "test:e2e": "playwright test",
-    "check": "npm run format:check && npm run lint && npm test"
+    "check": "npm run format:check && npm run lint && npm test && npm run build && npm run deploy:dry-run"
   },
   "engines": {
     "node": ">=22"
@@ -24,6 +26,7 @@
     "http-server": "^14.1.1",
     "prettier": "^3.6.2",
     "stylelint": "^16.21.0",
-    "stylelint-config-standard": "^38.0.0"
+    "stylelint-config-standard": "^38.0.0",
+    "wrangler": "^4.114.0"
   }
 }
