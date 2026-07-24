@@ -7,13 +7,27 @@ test.beforeEach(async ({ page }) => {
 
 test('renders the portfolio shell and working navigation', async ({ page }) => {
   await expect(page).toHaveTitle(/Anders Jensen/i);
-  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  await expect(
+    page.getByRole('heading', { level: 1, name: 'Anders Jensen' }),
+  ).toBeVisible();
 
-  for (const name of ['About', 'Projects', 'Contact']) {
+  for (const name of ['About', 'Experience']) {
     const link = page.getByRole('navigation').getByRole('link', { name });
     await expect(link).toBeVisible();
     await expect(page.locator(await link.getAttribute('href'))).toHaveCount(1);
   }
+
+  await page
+    .getByRole('navigation')
+    .getByRole('link', { name: 'Blog' })
+    .click();
+  await expect(page).toHaveURL(/blog\.html$/);
+  await expect(
+    page.getByRole('heading', { level: 1, name: 'Blog' }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole('link', { name: /Your first post/i }),
+  ).toBeVisible();
 });
 
 test('has no detectable WCAG A or AA accessibility violations', async ({
@@ -33,4 +47,49 @@ test('does not overflow horizontally', async ({ page }) => {
   }));
 
   expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth);
+});
+
+test('keeps the navigation visible while scrolling', async ({ page }) => {
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+
+  const header = await page.locator('.site-header').evaluate((element) => {
+    const styles = window.getComputedStyle(element);
+    return {
+      position: styles.position,
+      top: element.getBoundingClientRect().top,
+    };
+  });
+
+  expect(header.position).toBe('sticky');
+  expect(Math.abs(header.top)).toBeLessThanOrEqual(1);
+});
+
+test('blog page is accessible and does not overflow on mobile', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/blog.html');
+
+  const results = await new AxeBuilder({ page })
+    .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+    .analyze();
+  const dimensions = await page.evaluate(() => ({
+    clientWidth: document.documentElement.clientWidth,
+    scrollWidth: document.documentElement.scrollWidth,
+  }));
+
+  expect(results.violations).toEqual([]);
+  expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth);
+});
+
+test('renders a Markdown post as a standalone page', async ({ page }) => {
+  await page.goto('/blog/example.html');
+
+  await expect(
+    page.getByRole('heading', { level: 1, name: 'Your first post' }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole('heading', { level: 2, name: 'Add a section' }),
+  ).toBeVisible();
+  await expect(page.getByRole('link', { name: 'All posts' })).toBeVisible();
 });

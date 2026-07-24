@@ -5,18 +5,18 @@
   "description": "Personal portfolio for Anders Jensen.",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "dev": "http-server . -p 4173 -c-1",
+    "dev": "npm run build && http-server dist -p 4173 -c-1",
     "deploy:dry-run": "wrangler deploy --config wrangler.jsonc --assets ./dist --dry-run && wrangler versions upload --config wrangler.jsonc --assets ./dist --dry-run",
     "deploy:preview": "wrangler versions upload --config wrangler.jsonc --assets ./dist",
     "deploy:production": "wrangler deploy --config wrangler.jsonc --assets ./dist",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "npm run lint:html && npm run lint:css",
-    "lint:html": "html-validate index.html",
+    "lint:html": "html-validate index.html blog.html templates/blog-post.html",
     "lint:css": "stylelint \"**/*.css\"",
-    "test": "node --test tests/site-structure.test.mjs",
+    "test": "npm run build && node --test tests/site-structure.test.mjs",
     "test:e2e": "playwright test",
-    "check": "npm run format:check && npm run lint && npm test && npm run build && npm run deploy:dry-run"
+    "check": "npm run format:check && npm run lint && npm test && npm run deploy:dry-run"
   },
   "engines": {
     "node": ">=22"
@@ -26,6 +26,7 @@
     "@playwright/test": "^1.54.1",
     "html-validate": "^10.2.1",
     "http-server": "^14.1.1",
+    "marked": "^18.0.7",
     "prettier": "^3.6.2",
     "stylelint": "^16.21.0",
     "stylelint-config-standard": "^38.0.0",

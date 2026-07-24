@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Writing from Anders Jensen on technology, markets, mathematics, and other interests."
+    />
+    <meta name="theme-color" content="#fafaf8" />
+    <meta property="og:title" content="Blog - Anders Jensen" />
+    <meta
+      property="og:description"
+      content="Writing from Anders Jensen on technology, markets, mathematics, and other interests."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://andersj.dev/blog.html" />
+    <meta property="og:image" content="https://andersj.dev/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://andersj.dev/og.png" />
+    <title>Blog - Anders Jensen</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html">Anders Jensen</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="index.html#about">About</a>
+          <a href="index.html#experience">Experience</a>
+          <a href="#posts" aria-current="page">Blog</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content">
+      <section class="blog-intro" id="top" aria-labelledby="blog-title">
+        <p class="intro-label">Writing</p>
+        <h1 id="blog-title">Blog</h1>
+        <p>Thoughts, notes, and longer pieces—ordered from newest to oldest.</p>
+      </section>
+
+      <section class="post-list" id="posts" aria-label="Blog posts">
+        <!-- BLOG_LIST -->
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <p>Anders Jensen</p>
+        <a href="index.html">Back to portfolio</a>
+      </div>
+      <p>© <span data-current-year>2026</span></p>
+    </footer>
+
+    <script>
+      document.querySelectorAll('[data-current-year]').forEach((element) => {
+        element.textContent = new Date().getFullYear();
+      });
+    </script>
+  </body>
+</html>
