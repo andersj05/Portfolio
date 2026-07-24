@@ -7,7 +7,7 @@
       name="description"
       content="Writing from Anders Jensen on technology, markets, mathematics, and other interests."
     />
-    <meta name="theme-color" content="#fafaf8" />
+    <meta name="theme-color" content="#f3f1ea" />
     <meta property="og:title" content="Blog - Anders Jensen" />
     <meta
       property="og:description"
@@ -26,23 +26,33 @@
 
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand" href="index.html">Anders Jensen</a>
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true"></span>
+          Anders Jensen
+        </a>
         <nav class="site-nav" aria-label="Main navigation">
           <a href="index.html#about">About</a>
-          <a href="index.html#experience">Experience</a>
+          <a href="index.html#projects">Projects</a>
           <a href="#posts" aria-current="page">Blog</a>
         </nav>
       </div>
     </header>
 
-    <main id="content">
-      <section class="blog-intro" id="top" aria-labelledby="blog-title">
-        <p class="intro-label">Writing</p>
-        <h1 id="blog-title">Blog</h1>
-        <p>Thoughts, notes, and longer pieces—ordered from newest to oldest.</p>
-      </section>
+    <main id="content" class="blog-shell">
+      <header class="blog-intro" id="top">
+        <p class="eyebrow">Field notes</p>
+        <h1>Blog</h1>
+        <p>
+          Thoughts on software, markets, mathematics, and whatever else earns a
+          closer look.
+        </p>
+      </header>
 
       <section class="post-list" id="posts" aria-label="Blog posts">
+        <div class="post-list-heading" aria-hidden="true">
+          <span>Date</span>
+          <span>Article</span>
+        </div>
         <!-- BLOG_LIST -->
       </section>
     </main>
@@ -50,9 +60,9 @@
     <footer class="site-footer">
       <div>
         <p>Anders Jensen</p>
-        <a href="index.html">Back to portfolio</a>
+        <a href="index.html">Portfolio</a>
       </div>
-      <p>© <span data-current-year>2026</span></p>
+      <p>&copy; <span data-current-year>2026</span></p>
     </footer>
 
     <script>

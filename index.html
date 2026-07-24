@@ -7,7 +7,7 @@
       name="description"
       content="Anders Jensen - computer science, mathematics, and quantitative finance."
     />
-    <meta name="theme-color" content="#fafaf8" />
+    <meta name="theme-color" content="#f3f1ea" />
     <meta property="og:title" content="Anders Jensen" />
     <meta
       property="og:description"
@@ -26,10 +26,13 @@
 
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand" href="#top">Anders Jensen</a>
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true"></span>
+          Anders Jensen
+        </a>
         <nav class="site-nav" aria-label="Main navigation">
           <a href="#about">About</a>
-          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
           <a href="blog.html">Blog</a>
         </nav>
       </div>
@@ -37,33 +40,30 @@
 
     <main id="content">
       <section class="intro" id="top" aria-labelledby="page-title">
-        <div class="intro-main">
-          <p class="intro-label">Portfolio / 2026</p>
+        <div class="intro-copy" id="about">
+          <p class="eyebrow">Portfolio / 2026</p>
           <h1 id="page-title">Anders Jensen</h1>
 
           <!-- EDIT THIS BLOCK: Replace the paragraph below with your own description. -->
-          <div class="description-block" id="about">
-            <p>
-              Write your description here. Use this space for a short
-              introduction about who you are, what you work on, and what you are
-              interested in.
-            </p>
-          </div>
+          <p class="intro-description">
+            Write a concise introduction here. Use this space to describe who
+            you are, what you build, and the problems you are interested in.
+          </p>
 
-          <nav class="intro-links" aria-label="Profile links">
+          <nav class="profile-links" aria-label="Profile links">
             <a
               href="https://github.com/AndersJensen5004"
               target="_blank"
               rel="noopener noreferrer"
             >
-              GitHub <span aria-hidden="true">↗</span>
+              GitHub <span aria-hidden="true">&nearr;</span>
             </a>
             <a
               href="https://www.linkedin.com/in/andersjensen1"
               target="_blank"
               rel="noopener noreferrer"
             >
-              LinkedIn <span aria-hidden="true">↗</span>
+              LinkedIn <span aria-hidden="true">&nearr;</span>
             </a>
             <span class="contact-address">apjensen[dot]ncsu[dot]edu</span>
           </nav>
@@ -76,63 +76,108 @@
             width="400"
             height="300"
           />
+          <figcaption>Profile, in practice.</figcaption>
         </figure>
       </section>
 
       <section
-        class="content-section"
+        class="credentials"
         id="experience"
-        aria-labelledby="experience-title"
+        aria-label="Education and experience"
       >
-        <div class="section-heading">
-          <p>Experience</p>
-          <h2 id="experience-title">Where I&apos;ve worked</h2>
-        </div>
+        <article class="credential-group">
+          <p class="eyebrow">Education</p>
+          <div class="credential-heading">
+            <h2>North Carolina State University</h2>
+            <span>2027</span>
+          </div>
+          <p>B.S. Computer Science, Artificial Intelligence</p>
+          <p>B.S. Mathematics</p>
+        </article>
 
-        <div class="experience-list">
-          <article class="experience-row">
+        <article class="credential-group">
+          <p class="eyebrow">Experience</p>
+          <div class="compact-list">
             <div>
-              <h3>Moody&apos;s Analytics</h3>
+              <h2>Moody&apos;s Analytics</h2>
               <p>Quantitative Analyst Intern</p>
             </div>
-            <p class="experience-date">2026 - Present</p>
-          </article>
-          <article class="experience-row">
             <div>
-              <h3>Thompson Creek Wealth Advisors</h3>
+              <h2>Thompson Creek Wealth Advisors</h2>
               <p>Analyst Intern</p>
             </div>
-            <p class="experience-date">2025 - 2026</p>
-          </article>
-          <article class="experience-row">
             <div>
-              <h3>Apatheia Capital Management</h3>
+              <h2>Apatheia Capital Management</h2>
               <p>Research Intern</p>
             </div>
-            <p class="experience-date">2025</p>
-          </article>
-          <article class="experience-row">
             <div>
-              <h3>Armas Capital Management</h3>
+              <h2>Armas Capital Management</h2>
               <p>Market Research &amp; Portfolio Strategy Intern</p>
             </div>
-            <p class="experience-date">2024 - 2025</p>
-          </article>
-        </div>
+          </div>
+        </article>
       </section>
 
       <section
-        class="content-section education"
-        aria-labelledby="education-title"
+        class="projects-section"
+        id="projects"
+        aria-labelledby="projects-title"
       >
-        <div class="section-heading">
-          <p>Education</p>
-          <h2 id="education-title">North Carolina State University</h2>
+        <div class="section-intro">
+          <p class="eyebrow">Selected work</p>
+          <h2 id="projects-title">Projects</h2>
+          <p>
+            A place for focused work across software, quantitative research, and
+            design.
+          </p>
         </div>
-        <div class="education-summary">
-          <p>B.S. Computer Science, Artificial Intelligence Concentration</p>
-          <p>B.S. Mathematics</p>
-          <p class="muted">Expected May 2027</p>
+
+        <!-- EDIT THESE CARDS: Replace titles, descriptions, tags, and href values. -->
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-number">01</div>
+            <div>
+              <h3>Project title</h3>
+              <p>
+                Add a short explanation of the problem, your approach, and the
+                result.
+              </p>
+            </div>
+            <div class="project-meta">
+              <span>Category / Year</span>
+              <a href="#">Add link <span aria-hidden="true">&nearr;</span></a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-number">02</div>
+            <div>
+              <h3>Project title</h3>
+              <p>
+                Add a short explanation of the problem, your approach, and the
+                result.
+              </p>
+            </div>
+            <div class="project-meta">
+              <span>Category / Year</span>
+              <a href="#">Add link <span aria-hidden="true">&nearr;</span></a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-number">03</div>
+            <div>
+              <h3>Project title</h3>
+              <p>
+                Add a short explanation of the problem, your approach, and the
+                result.
+              </p>
+            </div>
+            <div class="project-meta">
+              <span>Category / Year</span>
+              <a href="#">Add link <span aria-hidden="true">&nearr;</span></a>
+            </div>
+          </article>
         </div>
       </section>
     </main>
@@ -142,7 +187,7 @@
         <p>Anders Jensen</p>
         <span>apjensen[dot]ncsu[dot]edu</span>
       </div>
-      <p>© <span data-current-year>2026</span></p>
+      <p>&copy; <span data-current-year>2026</span></p>
     </footer>
 
     <script>
