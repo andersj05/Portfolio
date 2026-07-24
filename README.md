@@ -31,8 +31,9 @@ reviewed release pull requests promote `dev` to `main`.
 Cloudflare Workers Builds uses:
 
 - build command: `npm run build`
-- deploy command: `npx wrangler deploy`
-- non-production deploy command: `npx wrangler versions upload`
+- deploy command: `npm run deploy:production`
+- non-production deploy command: `npm run deploy:preview`
 
 The build creates `dist/`, and `wrangler.jsonc` deploys that directory as static
-assets.
+assets. Both deployment scripts explicitly select `wrangler.jsonc` and `dist/`
+so generated Cloudflare settings cannot redirect uploads to the repository root.
