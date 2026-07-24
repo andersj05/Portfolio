@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Anders Jensen — portfolio, projects, and professional background."
+    />
+    <title>Anders Jensen — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Anders Jensen home">AJ<span>.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">ANDERS JENSEN / PORTFOLIO</p>
+        <h1 id="hero-title">Building clear, useful things for the web.</h1>
+        <p class="hero-copy">
+          I’m Anders Jensen. This is my home for selected work, experiments, and the projects I’m building next.
+        </p>
+        <a class="button" href="#projects">Explore projects <span aria-hidden="true">↓</span></a>
+      </section>
+
+      <section class="section about" id="about" aria-labelledby="about-title">
+        <div class="section-label">01 / ABOUT</div>
+        <div>
+          <h2 id="about-title">A little context.</h2>
+          <p>
+            I’m interested in thoughtful products, data, and technology. This space will evolve alongside my work—part résumé, part project archive, and part place to share what I’m learning.
+          </p>
+          <a class="text-link" href="https://github.com/AndersJensen5004" target="_blank" rel="noreferrer">Find me on GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="section projects" id="projects" aria-labelledby="projects-title">
+        <div class="section-label">02 / SELECTED WORK</div>
+        <div class="projects-content">
+          <h2 id="projects-title">Projects in progress.</h2>
+          <div class="project-grid">
+            <article class="project-card project-card--featured">
+              <p class="project-number">01</p>
+              <div>
+                <p class="tag">COMING SOON</p>
+                <h3>Your next project</h3>
+                <p>Replace this card with a concise case study, a screenshot, and a link to the live project.</p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </article>
+            <article class="project-card">
+              <p class="project-number">02</p>
+              <div>
+                <p class="tag">EXPERIMENT</p>
+                <h3>Another idea</h3>
+                <p>Keep each project in its own GitHub repository and link it here when it is ready.</p>
+              </div>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <p class="eyebrow">03 / CONTACT</p>
+        <h2 id="contact-title">Have something in mind?</h2>
+        <a class="contact-link" href="https://github.com/AndersJensen5004" target="_blank" rel="noreferrer">github.com/AndersJensen5004 <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Anders Jensen</p>
+      <a href="https://github.com/AndersJensen5004" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
