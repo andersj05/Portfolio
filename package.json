@@ -6,7 +6,9 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "dev": "http-server . -p 4173 -c-1",
-    "deploy:dry-run": "wrangler deploy --dry-run",
+    "deploy:dry-run": "wrangler deploy --config wrangler.jsonc --assets ./dist --dry-run && wrangler versions upload --config wrangler.jsonc --assets ./dist --dry-run",
+    "deploy:preview": "wrangler versions upload --config wrangler.jsonc --assets ./dist",
+    "deploy:production": "wrangler deploy --config wrangler.jsonc --assets ./dist",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "npm run lint:html && npm run lint:css",
