@@ -163,7 +163,7 @@ h1 {
   gap: 0.75rem;
 }
 
-.intro-links a {
+.intro-links :where(a, .contact-address) {
   padding: 0.55rem 0.8rem;
   border: 1px solid var(--border);
   border-radius: 8px;
