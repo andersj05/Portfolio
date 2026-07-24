@@ -24,7 +24,15 @@ See [DEVELOPMENT.md](DEVELOPMENT.md) for the delivery plan and
 
 ## Deployment
 
-Cloudflare Pages deploys the production `main` branch. This static site needs no
-build command and uses `/` as its output directory. Pull requests should receive
-preview deployments. Feature branches merge into `dev`; reviewed release pull
-requests promote `dev` to `main`.
+Cloudflare Workers deploys the production `main` branch as static assets. Pull
+requests should receive preview deployments. Feature branches merge into `dev`;
+reviewed release pull requests promote `dev` to `main`.
+
+Cloudflare Workers Builds uses:
+
+- build command: `npm run build`
+- deploy command: `npx wrangler deploy`
+- non-production deploy command: `npx wrangler versions upload`
+
+The build creates `dist/`, and `wrangler.jsonc` deploys that directory as static
+assets.
