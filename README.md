@@ -1,13 +1,30 @@
 # Anders Jensen — Portfolio
 
-The source for [andersj.dev](https://andersj.dev), hosted on Cloudflare Pages.
+The source for [andersj.dev](https://andersj.dev), a static portfolio hosted on
+Cloudflare Pages.
 
-## Deploy on Cloudflare Pages
+## Development
 
-This is a static website, so Cloudflare Pages needs no build command.
+Use Node.js 22 or newer.
 
-- Production branch: `main`
-- Build command: *(leave blank)*
-- Build output directory: `/`
+```sh
+npm ci
+npm run dev
+```
 
-After the first deployment, add `andersj.dev` under **Workers & Pages → Portfolio → Custom domains**.
+Before opening a pull request, run:
+
+```sh
+npm run check
+npm run test:e2e
+```
+
+See [DEVELOPMENT.md](DEVELOPMENT.md) for the delivery plan and
+[CONTRIBUTING.md](CONTRIBUTING.md) for the branch and review workflow.
+
+## Deployment
+
+Cloudflare Pages deploys the production `main` branch. This static site needs no
+build command and uses `/` as its output directory. Pull requests should receive
+preview deployments. Feature branches merge into `dev`; reviewed release pull
+requests promote `dev` to `main`.
