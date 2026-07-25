@@ -7,7 +7,7 @@
       name="description"
       content="Writing from Anders Jensen on technology, markets, mathematics, and other interests."
     />
-    <meta name="theme-color" content="#fafaf8" />
+    <meta name="theme-color" content="#f5f4ef" />
     <meta property="og:title" content="Blog - Anders Jensen" />
     <meta
       property="og:description"
@@ -26,33 +26,60 @@
 
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand" href="index.html">Anders Jensen</a>
+        <a class="brand" href="index.html">
+          <span class="prompt-mark" aria-hidden="true">&gt;_</span>
+          andersj.dev
+        </a>
         <nav class="site-nav" aria-label="Main navigation">
-          <a href="index.html#about">About</a>
-          <a href="index.html#experience">Experience</a>
-          <a href="#posts" aria-current="page">Blog</a>
+          <a href="index.html#about"
+            ><span aria-hidden="true">[</span>About<span aria-hidden="true"
+              >]</span
+            ></a
+          >
+          <a href="index.html#projects"
+            ><span aria-hidden="true">[</span>Projects<span aria-hidden="true"
+              >]</span
+            ></a
+          >
+          <a href="#posts" aria-current="page"
+            ><span aria-hidden="true">[</span>Blog<span aria-hidden="true"
+              >]</span
+            ></a
+          >
         </nav>
       </div>
     </header>
 
-    <main id="content">
-      <section class="blog-intro" id="top" aria-labelledby="blog-title">
-        <p class="intro-label">Writing</p>
-        <h1 id="blog-title">Blog</h1>
-        <p>Thoughts, notes, and longer pieces—ordered from newest to oldest.</p>
-      </section>
+    <main id="content" class="blog-shell">
+      <header class="blog-intro" id="top">
+        <div>
+          <p class="command-line">
+            <span aria-hidden="true">$</span> ls ./blog
+          </p>
+          <h1>Blog</h1>
+          <p>Notes on software, markets, mathematics, and other interests.</p>
+        </div>
+        <pre class="ascii-note" aria-hidden="true">
+/*
+ * think
+ * write
+ * revise
+ */</pre>
+      </header>
 
       <section class="post-list" id="posts" aria-label="Blog posts">
+        <div class="post-list-heading" aria-hidden="true">
+          <span>date</span>
+          <span>article</span>
+          <span>read</span>
+        </div>
         <!-- BLOG_LIST -->
       </section>
     </main>
 
     <footer class="site-footer">
-      <div>
-        <p>Anders Jensen</p>
-        <a href="index.html">Back to portfolio</a>
-      </div>
-      <p>© <span data-current-year>2026</span></p>
+      <span>&copy; <span data-current-year>2026</span> Anders Jensen</span>
+      <a href="index.html">cd ../portfolio</a>
     </footer>
 
     <script>

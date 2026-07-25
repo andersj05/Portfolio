@@ -145,7 +145,7 @@ const blogList =
                 <h2>${escapeHtml(post.title)}</h2>
                 <p>${escapeHtml(post.description)}</p>
               </div>
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">&nearr;</span>
             </a>`,
         )
         .join('\n');

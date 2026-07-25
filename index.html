@@ -7,7 +7,7 @@
       name="description"
       content="Anders Jensen - computer science, mathematics, and quantitative finance."
     />
-    <meta name="theme-color" content="#fafaf8" />
+    <meta name="theme-color" content="#f5f4ef" />
     <meta property="og:title" content="Anders Jensen" />
     <meta
       property="og:description"
@@ -21,128 +21,187 @@
     <title>Anders Jensen</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="home-page">
     <a class="skip-link" href="#content">Skip to content</a>
 
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand" href="#top">Anders Jensen</a>
+        <a class="brand" href="#top">
+          <span class="prompt-mark" aria-hidden="true">&gt;_</span>
+          andersj.dev
+        </a>
         <nav class="site-nav" aria-label="Main navigation">
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="blog.html">Blog</a>
+          <a href="#about"
+            ><span aria-hidden="true">[</span>About<span aria-hidden="true"
+              >]</span
+            ></a
+          >
+          <a href="#projects"
+            ><span aria-hidden="true">[</span>Projects<span aria-hidden="true"
+              >]</span
+            ></a
+          >
+          <a href="blog.html"
+            ><span aria-hidden="true">[</span>Blog<span aria-hidden="true"
+              >]</span
+            ></a
+          >
         </nav>
       </div>
     </header>
 
-    <main id="content">
-      <section class="intro" id="top" aria-labelledby="page-title">
-        <div class="intro-main">
-          <p class="intro-label">Portfolio / 2026</p>
-          <h1 id="page-title">Anders Jensen</h1>
-
-          <!-- EDIT THIS BLOCK: Replace the paragraph below with your own description. -->
-          <div class="description-block" id="about">
-            <p>
-              Write your description here. Use this space for a short
-              introduction about who you are, what you work on, and what you are
-              interested in.
-            </p>
+    <main id="content" class="home-shell">
+      <section class="home-grid" id="top" aria-labelledby="page-title">
+        <aside class="profile-window" aria-label="Profile">
+          <div class="window-bar">
+            <span>profile.jpg</span>
+            <span aria-hidden="true">- □ ×</span>
           </div>
-
-          <nav class="intro-links" aria-label="Profile links">
+          <figure class="portrait-frame">
+            <img
+              src="github_profile.JPG"
+              alt="A small orange cat sitting at a piano"
+              width="400"
+              height="300"
+            />
+          </figure>
+          <div class="profile-caption">
+            <pre class="ascii-cat" aria-hidden="true">
+ /\_/\
+( o.o )
+ &gt; ^ &lt;</pre>
+            <div>
+              <strong>Anders Jensen</strong>
+              <span>CS + Mathematics</span>
+              <span>NC State University</span>
+            </div>
+          </div>
+          <nav class="profile-links" aria-label="Profile links">
             <a
               href="https://github.com/AndersJensen5004"
               target="_blank"
               rel="noopener noreferrer"
+              >GitHub <span aria-hidden="true">-&gt;</span></a
             >
-              GitHub <span aria-hidden="true">↗</span>
-            </a>
             <a
               href="https://www.linkedin.com/in/andersjensen1"
               target="_blank"
               rel="noopener noreferrer"
+              >LinkedIn <span aria-hidden="true">-&gt;</span></a
             >
-              LinkedIn <span aria-hidden="true">↗</span>
-            </a>
-            <span class="contact-address">apjensen[dot]ncsu[dot]edu</span>
           </nav>
-        </div>
+        </aside>
 
-        <figure class="profile-image">
-          <img
-            src="github_profile.JPG"
-            alt="A small orange cat sitting at a piano"
-            width="400"
-            height="300"
-          />
-        </figure>
-      </section>
+        <div class="portfolio-console">
+          <section class="intro-compact" id="about">
+            <p class="command-line"><span aria-hidden="true">$</span> whoami</p>
+            <h1 id="page-title">Anders Jensen</h1>
 
-      <section
-        class="content-section"
-        id="experience"
-        aria-labelledby="experience-title"
-      >
-        <div class="section-heading">
-          <p>Experience</p>
-          <h2 id="experience-title">Where I&apos;ve worked</h2>
-        </div>
+            <!-- EDIT THIS BLOCK: Replace the paragraph below with your own description. -->
+            <p class="intro-description">
+              Write a concise introduction here. Describe what you build, the
+              problems you like working on, and what you are exploring now.
+            </p>
 
-        <div class="experience-list">
-          <article class="experience-row">
-            <div>
-              <h3>Moody&apos;s Analytics</h3>
-              <p>Quantitative Analyst Intern</p>
-            </div>
-            <p class="experience-date">2026 - Present</p>
-          </article>
-          <article class="experience-row">
-            <div>
-              <h3>Thompson Creek Wealth Advisors</h3>
-              <p>Analyst Intern</p>
-            </div>
-            <p class="experience-date">2025 - 2026</p>
-          </article>
-          <article class="experience-row">
-            <div>
-              <h3>Apatheia Capital Management</h3>
-              <p>Research Intern</p>
-            </div>
-            <p class="experience-date">2025</p>
-          </article>
-          <article class="experience-row">
-            <div>
-              <h3>Armas Capital Management</h3>
-              <p>Market Research &amp; Portfolio Strategy Intern</p>
-            </div>
-            <p class="experience-date">2024 - 2025</p>
-          </article>
-        </div>
-      </section>
+            <p class="contact-line">
+              <span aria-hidden="true">mail:</span>
+              apjensen[dot]ncsu[dot]edu
+            </p>
+          </section>
 
-      <section
-        class="content-section education"
-        aria-labelledby="education-title"
-      >
-        <div class="section-heading">
-          <p>Education</p>
-          <h2 id="education-title">North Carolina State University</h2>
-        </div>
-        <div class="education-summary">
-          <p>B.S. Computer Science, Artificial Intelligence Concentration</p>
-          <p>B.S. Mathematics</p>
-          <p class="muted">Expected May 2027</p>
+          <div class="facts-grid">
+            <section class="console-section" aria-labelledby="education-title">
+              <p class="section-path" aria-hidden="true">+-- education/</p>
+              <div class="section-title-row">
+                <h2 id="education-title">NC State University</h2>
+                <span>Expected 2027</span>
+              </div>
+              <p>B.S. Computer Science / Artificial Intelligence</p>
+              <p>B.S. Mathematics</p>
+            </section>
+
+            <section class="console-section" aria-labelledby="experience-title">
+              <p class="section-path" aria-hidden="true">+-- experience/</p>
+              <h2 id="experience-title" class="visually-hidden">
+                Work experience
+              </h2>
+              <div class="experience-grid">
+                <div>
+                  <strong>Moody&apos;s Analytics</strong>
+                  <span>Quantitative Analyst Intern</span>
+                </div>
+                <div>
+                  <strong>Thompson Creek</strong>
+                  <span>Analyst Intern</span>
+                </div>
+                <div>
+                  <strong>Apatheia Capital</strong>
+                  <span>Research Intern</span>
+                </div>
+                <div>
+                  <strong>Armas Capital</strong>
+                  <span>Market Research &amp; Portfolio Strategy</span>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <section
+            class="projects-console"
+            id="projects"
+            aria-labelledby="projects-title"
+          >
+            <div class="projects-heading">
+              <div>
+                <p class="section-path" aria-hidden="true">+-- projects/</p>
+                <h2 id="projects-title">Selected projects</h2>
+              </div>
+              <span>3 entries</span>
+            </div>
+
+            <!-- EDIT THESE ROWS: Replace titles, descriptions, tags, and href values. -->
+            <div class="project-list">
+              <article class="project-row">
+                <span class="project-index">01</span>
+                <div>
+                  <h3>Project title</h3>
+                  <p>One sentence on the problem, approach, and result.</p>
+                </div>
+                <span class="project-stack">stack / year</span>
+                <a href="#">open <span aria-hidden="true">-&gt;</span></a>
+              </article>
+              <article class="project-row">
+                <span class="project-index">02</span>
+                <div>
+                  <h3>Project title</h3>
+                  <p>One sentence on the problem, approach, and result.</p>
+                </div>
+                <span class="project-stack">stack / year</span>
+                <a href="#">open <span aria-hidden="true">-&gt;</span></a>
+              </article>
+              <article class="project-row">
+                <span class="project-index">03</span>
+                <div>
+                  <h3>Project title</h3>
+                  <p>One sentence on the problem, approach, and result.</p>
+                </div>
+                <span class="project-stack">stack / year</span>
+                <a href="#">open <span aria-hidden="true">-&gt;</span></a>
+              </article>
+            </div>
+          </section>
+
+          <div class="console-signoff" aria-hidden="true">
+            <span>[ portfolio: ready ]</span>
+            <span>{ code; learn; repeat; }</span>
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div>
-        <p>Anders Jensen</p>
-        <span>apjensen[dot]ncsu[dot]edu</span>
-      </div>
-      <p>© <span data-current-year>2026</span></p>
+      <span>&copy; <span data-current-year>2026</span> Anders Jensen</span>
+      <span aria-hidden="true">EOF</span>
     </footer>
 
     <script>

@@ -11,7 +11,7 @@ test('renders the portfolio shell and working navigation', async ({ page }) => {
     page.getByRole('heading', { level: 1, name: 'Anders Jensen' }),
   ).toBeVisible();
 
-  for (const name of ['About', 'Experience']) {
+  for (const name of ['About', 'Projects']) {
     const link = page.getByRole('navigation').getByRole('link', { name });
     await expect(link).toBeVisible();
     await expect(page.locator(await link.getAttribute('href'))).toHaveCount(1);
@@ -47,6 +47,26 @@ test('does not overflow horizontally', async ({ page }) => {
   }));
 
   expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth);
+});
+
+test('fits the compact home in a standard desktop viewport', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1366, height: 768 });
+  await page.goto('/');
+
+  const layout = await page.evaluate(() => {
+    const image = document.querySelector('.portrait-frame img');
+
+    return {
+      clientHeight: document.documentElement.clientHeight,
+      imageObjectFit: image ? window.getComputedStyle(image).objectFit : null,
+      scrollHeight: document.documentElement.scrollHeight,
+    };
+  });
+
+  expect(layout.scrollHeight).toBeLessThanOrEqual(layout.clientHeight);
+  expect(layout.imageObjectFit).toBe('contain');
 });
 
 test('keeps the navigation visible while scrolling', async ({ page }) => {
