@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="{{DESCRIPTION}}" />
-    <meta name="theme-color" content="#f3f1ea" />
+    <meta name="theme-color" content="#f5f4ef" />
     <meta property="og:title" content="{{TITLE}} - Anders Jensen" />
     <meta property="og:description" content="{{DESCRIPTION}}" />
     <meta property="og:type" content="article" />
@@ -20,13 +20,25 @@
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href="../index.html">
-          <span class="brand-mark" aria-hidden="true"></span>
-          Anders Jensen
+          <span class="prompt-mark" aria-hidden="true">&gt;_</span>
+          andersj.dev
         </a>
         <nav class="site-nav" aria-label="Main navigation">
-          <a href="../index.html#about">About</a>
-          <a href="../index.html#projects">Projects</a>
-          <a href="../blog.html" aria-current="page">Blog</a>
+          <a href="../index.html#about"
+            ><span aria-hidden="true">[</span>About<span aria-hidden="true"
+              >]</span
+            ></a
+          >
+          <a href="../index.html#projects"
+            ><span aria-hidden="true">[</span>Projects<span aria-hidden="true"
+              >]</span
+            ></a
+          >
+          <a href="../blog.html" aria-current="page"
+            ><span aria-hidden="true">[</span>Blog<span aria-hidden="true"
+              >]</span
+            ></a
+          >
         </nav>
       </div>
     </header>
@@ -34,10 +46,12 @@
     <main id="content" class="article-shell">
       <article>
         <header class="post-header">
-          <a class="post-back" href="../blog.html">&larr; All posts</a>
-          <div>
+          <a class="post-back" href="../blog.html">&lt;- cd ../blog</a>
+          <div class="post-meta">
+            <p class="command-line">
+              <span aria-hidden="true">$</span> cat {{SLUG}}.md
+            </p>
             <time datetime="{{DATE}}">{{FORMATTED_DATE}}</time>
-            <p class="eyebrow">Article</p>
           </div>
           <h1>{{TITLE}}</h1>
           <p class="post-summary">{{DESCRIPTION}}</p>
@@ -47,11 +61,8 @@
     </main>
 
     <footer class="site-footer">
-      <div>
-        <p>Anders Jensen</p>
-        <a href="../blog.html">Blog index</a>
-      </div>
-      <p>&copy; <span data-current-year>2026</span></p>
+      <span>&copy; <span data-current-year>2026</span> Anders Jensen</span>
+      <a href="../blog.html">all posts</a>
     </footer>
 
     <script>

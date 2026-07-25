@@ -49,6 +49,26 @@ test('does not overflow horizontally', async ({ page }) => {
   expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth);
 });
 
+test('fits the compact home in a standard desktop viewport', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1366, height: 768 });
+  await page.goto('/');
+
+  const layout = await page.evaluate(() => {
+    const image = document.querySelector('.portrait-frame img');
+
+    return {
+      clientHeight: document.documentElement.clientHeight,
+      imageObjectFit: image ? window.getComputedStyle(image).objectFit : null,
+      scrollHeight: document.documentElement.scrollHeight,
+    };
+  });
+
+  expect(layout.scrollHeight).toBeLessThanOrEqual(layout.clientHeight);
+  expect(layout.imageObjectFit).toBe('contain');
+});
+
 test('keeps the navigation visible while scrolling', async ({ page }) => {
   await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
 
