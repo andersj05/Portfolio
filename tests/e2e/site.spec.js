@@ -26,7 +26,7 @@ test('renders the portfolio shell and working navigation', async ({ page }) => {
     page.getByRole('heading', { level: 1, name: 'Blog' }),
   ).toBeVisible();
   await expect(
-    page.getByRole('link', { name: /Your first post/i }),
+    page.getByRole('link', { name: /Anthropic Is RL Maxxing Opus 5/i }),
   ).toBeVisible();
 });
 
@@ -111,13 +111,16 @@ test('blog page is accessible and does not overflow on mobile', async ({
 });
 
 test('renders a Markdown post as a standalone page', async ({ page }) => {
-  await page.goto('/blog/example.html');
+  await page.goto('/blog/01.html');
 
   await expect(
-    page.getByRole('heading', { level: 1, name: 'Your first post' }),
+    page.getByRole('heading', {
+      level: 1,
+      name: 'Anthropic Is RL Maxxing Opus 5',
+    }),
   ).toBeVisible();
-  await expect(
-    page.getByRole('heading', { level: 2, name: 'Add a section' }),
-  ).toBeVisible();
+  await expect(page.locator('.post-content')).toContainText(
+    'After looking into Opus 5',
+  );
   await expect(page.getByRole('link', { name: 'All posts' })).toBeVisible();
 });
