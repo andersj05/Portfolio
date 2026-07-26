@@ -57,16 +57,24 @@ test('fits the compact home in a standard desktop viewport', async ({
 
   const layout = await page.evaluate(() => {
     const image = document.querySelector('.portrait-frame img');
+    const imageBounds = image?.getBoundingClientRect();
 
     return {
       clientHeight: document.documentElement.clientHeight,
-      imageObjectFit: image ? window.getComputedStyle(image).objectFit : null,
+      naturalImageRatio: image
+        ? image.naturalWidth / image.naturalHeight
+        : null,
+      renderedImageRatio: imageBounds
+        ? imageBounds.width / imageBounds.height
+        : null,
       scrollHeight: document.documentElement.scrollHeight,
     };
   });
 
   expect(layout.scrollHeight).toBeLessThanOrEqual(layout.clientHeight);
-  expect(layout.imageObjectFit).toBe('contain');
+  expect(
+    Math.abs(layout.renderedImageRatio - layout.naturalImageRatio),
+  ).toBeLessThan(0.01);
 });
 
 test('keeps the navigation visible while scrolling', async ({ page }) => {
