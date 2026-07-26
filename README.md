@@ -22,6 +22,25 @@ npm run test:e2e
 See [DEVELOPMENT.md](DEVELOPMENT.md) for the delivery plan and
 [CONTRIBUTING.md](CONTRIBUTING.md) for the branch and review workflow.
 
+## Writing blog posts
+
+Add a lowercase, hyphen-separated Markdown file to `blogs/`. Start from Create a
+lowercase Markdown file such as `blogs/my-first-post.md` and keep the front
+matter at the top:
+
+```md
+---
+title: 'Post title'
+date: '2026-07-24'
+description: 'A short summary.'
+---
+```
+
+Write the post below the front matter using standard Markdown. The `title`
+becomes the page's main heading, so begin the body with a paragraph or `##`
+section rather than another `#` heading. The build creates an individual page
+for every file and orders the blog index by `date`, newest first.
+
 ## Deployment
 
 Cloudflare Workers deploys the production `main` branch as static assets. Pull

@@ -5,123 +5,241 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Anders Jensen — portfolio, projects, and professional background."
+      content="Anders Jensen - computer science, mathematics, and quantitative finance."
     />
-    <title>Anders Jensen — Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
+    <meta name="theme-color" content="#f5f4ef" />
+    <meta property="og:title" content="Anders Jensen" />
+    <meta
+      property="og:description"
+      content="Personal website and blog of Anders Jensen."
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://andersj.dev/" />
+    <meta property="og:image" content="https://andersj.dev/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://andersj.dev/og.png" />
+    <title>Anders Jensen</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+
+  <body class="home-page">
+    <a class="skip-link" href="#content">Skip to content</a>
+
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Anders Jensen home"
-        >AJ<span>.</span></a
-      >
-      <nav aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="header-inner">
+        <a class="brand" href="#top">
+          <span class="prompt-mark" aria-hidden="true">&gt;_</span>
+          andersj.dev
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="#about"
+            ><span aria-hidden="true">[</span>About<span aria-hidden="true"
+              >]</span
+            ></a
+          >
+          <a href="#projects"
+            ><span aria-hidden="true">[</span>Projects<span aria-hidden="true"
+              >]</span
+            ></a
+          >
+          <a href="blog.html"
+            ><span aria-hidden="true">[</span>Blog<span aria-hidden="true"
+              >]</span
+            ></a
+          >
+        </nav>
+      </div>
     </header>
 
-    <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <p class="eyebrow">ANDERS JENSEN / PORTFOLIO</p>
-        <h1 id="hero-title">Building clear, useful things for the web.</h1>
-        <p class="hero-copy">
-          I’m Anders Jensen. This is my home for selected work, experiments, and
-          the projects I’m building next.
-        </p>
-        <a class="button" href="#projects"
-          >Explore projects <span aria-hidden="true">↓</span></a
-        >
-      </section>
+    <main id="content" class="home-shell">
+      <section class="home-grid" id="top" aria-labelledby="page-title">
+        <aside class="profile-window" aria-label="Profile">
+          <div class="window-bar">
+            <span>profile.jpg</span>
+            <span aria-hidden="true">- □ ×</span>
+          </div>
+          <figure class="portrait-frame">
+            <img
+              src="github_profile.JPG"
+              alt="A small orange cat sitting at a piano"
+              width="400"
+              height="304"
+            />
+          </figure>
+          <div class="profile-caption">
+            <pre class="ascii-cat" aria-hidden="true">
+ /\_/\
+( o.o )
+ &gt; ^ &lt;</pre>
+            <div>
+              <strong>Anders Jensen</strong>
+              <span>CS + Mathematics</span>
+              <span>NC State University</span>
+            </div>
+          </div>
+          <nav class="profile-links" aria-label="Profile links">
+            <a
+              href="https://github.com/AndersJensen5004"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub <span aria-hidden="true">-&gt;</span></a
+            >
+            <a
+              href="https://www.linkedin.com/in/andersjensen1"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn <span aria-hidden="true">-&gt;</span></a
+            >
+          </nav>
+        </aside>
 
-      <section class="section about" id="about" aria-labelledby="about-title">
-        <div class="section-label">01 / ABOUT</div>
-        <div>
-          <h2 id="about-title">A little context.</h2>
-          <p>
-            I’m interested in thoughtful products, data, and technology. This
-            space will evolve alongside my work—part résumé, part project
-            archive, and part place to share what I’m learning.
-          </p>
-          <a
-            class="text-link"
-            href="https://github.com/AndersJensen5004"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Find me on GitHub <span aria-hidden="true">↗</span></a
+        <div class="portfolio-console">
+          <section class="intro-compact" id="about">
+            <p class="command-line"><span aria-hidden="true">$</span> whoami</p>
+            <h1 id="page-title">Anders Jensen</h1>
+
+            <p class="intro-description">
+              Hello, I am Anders. I study CS and Math at NC State University.
+              I&apos;m interested in the capabilities of LLMs, deploying AI
+              solutions, applied mathematics, finance, and, of course,
+              macroeconomics. I&apos;m always willing to discuss new project
+              ideas; reach out if you have any!
+            </p>
+
+            <p class="contact-line">
+              <span aria-hidden="true">mail:</span>
+              apjensen [at] ncsu [dot] edu
+            </p>
+          </section>
+
+          <div class="facts-grid">
+            <section class="console-section" aria-labelledby="education-title">
+              <p class="section-path" aria-hidden="true">+-- education/</p>
+              <div class="section-title-row">
+                <h2 id="education-title">NC State University</h2>
+                <span>Class of 2027</span>
+              </div>
+              <p>B.S. Computer Science / Artificial Intelligence</p>
+              <p>B.S. Mathematics</p>
+            </section>
+
+            <section class="console-section" aria-labelledby="experience-title">
+              <p class="section-path" aria-hidden="true">+-- experience/</p>
+              <h2 id="experience-title" class="visually-hidden">
+                Work experience
+              </h2>
+              <div class="experience-grid">
+                <div>
+                  <div class="experience-heading">
+                    <strong>Moody&apos;s Analytics</strong>
+                    <span class="experience-date">2026&ndash;Present</span>
+                  </div>
+                  <span class="experience-role"
+                    >Quantitative Analyst Intern</span
+                  >
+                </div>
+                <div>
+                  <div class="experience-heading">
+                    <strong>Thompson Creek</strong>
+                    <span class="experience-date">2025&ndash;2026</span>
+                  </div>
+                  <span class="experience-role">Analyst Intern</span>
+                </div>
+                <div>
+                  <div class="experience-heading">
+                    <strong>Apatheia Capital</strong>
+                    <span class="experience-date">2025</span>
+                  </div>
+                  <span class="experience-role">Research Intern</span>
+                </div>
+                <div>
+                  <div class="experience-heading">
+                    <strong>Armas Capital</strong>
+                    <span class="experience-date">2024&ndash;2025</span>
+                  </div>
+                  <span class="experience-role"
+                    >Market Research &amp; Portfolio Strategy</span
+                  >
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <section
+            class="projects-console"
+            id="projects"
+            aria-labelledby="projects-title"
           >
-        </div>
-      </section>
+            <div class="projects-heading">
+              <div>
+                <p class="section-path" aria-hidden="true">+-- projects/</p>
+                <h2 id="projects-title">Selected projects</h2>
+              </div>
+              <span>3 entries</span>
+            </div>
 
-      <section
-        class="section projects"
-        id="projects"
-        aria-labelledby="projects-title"
-      >
-        <div class="section-label">02 / SELECTED WORK</div>
-        <div class="projects-content">
-          <h2 id="projects-title">Projects in progress.</h2>
-          <div class="project-grid">
-            <article class="project-card project-card--featured">
-              <p class="project-number">01</p>
-              <div>
-                <p class="tag">COMING SOON</p>
-                <h3>Your next project</h3>
-                <p>
-                  Replace this card with a concise case study, a screenshot, and
-                  a link to the live project.
-                </p>
-              </div>
-              <span class="project-arrow" aria-hidden="true">↗</span>
-            </article>
-            <article class="project-card">
-              <p class="project-number">02</p>
-              <div>
-                <p class="tag">EXPERIMENT</p>
-                <h3>Another idea</h3>
-                <p>
-                  Keep each project in its own GitHub repository and link it
-                  here when it is ready.
-                </p>
-              </div>
-              <span class="project-arrow" aria-hidden="true">↗</span>
-            </article>
+            <div class="project-list">
+              <article class="project-row">
+                <span class="project-index">01</span>
+                <div>
+                  <h3>Sighted</h3>
+                  <p>
+                    UI/UX project, a 3D Manhattan experience for discovering
+                    places by atmosphere, walking distance, and time of day.
+                  </p>
+                </div>
+                <span class="project-stack">React / 2026</span>
+                <a
+                  href="https://github.com/AndersJensen5004/Sighted"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  open <span aria-hidden="true">-&gt;</span>
+                </a>
+              </article>
+              <article class="project-row">
+                <span class="project-index">02</span>
+                <div>
+                  <h3>IntuitionMap</h3>
+                  <p>Work in progress...</p>
+                </div>
+                <span class="project-stack">stack / year</span>
+                <a href="#">open <span aria-hidden="true">-&gt;</span></a>
+              </article>
+              <article class="project-row">
+                <span class="project-index">03</span>
+                <div>
+                  <h3>Mercantilism Macro Research</h3>
+                  <p>
+                    Mapped how industrial policy and strategic controls collide
+                    with AI, produced a macro framework and 15 resolvable
+                    forecasts.
+                  </p>
+                </div>
+                <span class="project-stack"
+                  >macro research / Python / 2026</span
+                >
+                <span class="project-link-disabled">coming soon</span>
+              </article>
+            </div>
+          </section>
+
+          <div class="console-signoff" aria-hidden="true">
+            <span>[ portfolio: ready ]</span>
           </div>
         </div>
       </section>
-
-      <section class="contact" id="contact" aria-labelledby="contact-title">
-        <p class="eyebrow">03 / CONTACT</p>
-        <h2 id="contact-title">Have something in mind?</h2>
-        <a
-          class="contact-link"
-          href="https://github.com/AndersJensen5004"
-          target="_blank"
-          rel="noopener noreferrer"
-          >github.com/AndersJensen5004 <span aria-hidden="true">↗</span></a
-        >
-      </section>
     </main>
 
-    <footer>
-      <p>© <span id="year"></span> Anders Jensen</p>
-      <a
-        href="https://github.com/AndersJensen5004"
-        target="_blank"
-        rel="noopener noreferrer"
-        >GitHub ↗</a
-      >
+    <footer class="site-footer">
+      <span>&copy; <span data-current-year>2026</span> Anders Jensen</span>
+      <span aria-hidden="true">EOF</span>
     </footer>
 
     <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
+      document.querySelectorAll('[data-current-year]').forEach((element) => {
+        element.textContent = new Date().getFullYear();
+      });
     </script>
   </body>
 </html>
