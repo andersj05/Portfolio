@@ -6,10 +6,9 @@ const root = new URL('../', import.meta.url);
 const output = new URL('../dist/', import.meta.url);
 const sourceHtml = await readFile(new URL('index.html', root), 'utf8');
 const builtPages = await Promise.all(
-  ['index.html', 'blog.html', 'blog/01.html'].map(async (path) => [
-    path,
-    await readFile(new URL(path, output), 'utf8'),
-  ]),
+  ['index.html', 'blog.html', 'blog/anthropic_opus_5_eval.html'].map(
+    async (path) => [path, await readFile(new URL(path, output), 'utf8')],
+  ),
 );
 
 test('required source, template, blog, and media files exist', async () => {
@@ -20,7 +19,7 @@ test('required source, template, blog, and media files exist', async () => {
       'styles.css',
       'github_profile.JPG',
       'og.png',
-      'blogs/01.md',
+      'blogs/anthropic_opus_5_eval.md',
       'templates/blog-post.html',
     ].map((file) => access(new URL(file, root))),
   );
@@ -77,12 +76,14 @@ test('new-tab links prevent opener access', () => {
 
 test('Markdown posts render and blog dates are newest first', () => {
   const blogPage = builtPages.find(([file]) => file === 'blog.html')[1];
-  const postPage = builtPages.find(([file]) => file === 'blog/01.html')[1];
+  const postPage = builtPages.find(
+    ([file]) => file === 'blog/anthropic_opus_5_eval.html',
+  )[1];
   const dates = [...blogPage.matchAll(/<time datetime="([^"]+)"/g)].map(
     (match) => match[1],
   );
 
-  assert.match(blogPage, /href="blog\/01\.html"/);
+  assert.match(blogPage, /href="blog\/anthropic_opus_5_eval\.html"/);
   assert.match(postPage, /<h1>Anthropic Is RL Maxxing Opus 5<\/h1>/);
   assert.match(postPage, /After looking into Opus 5/);
   assert.deepEqual(dates, [...dates].sort().reverse());

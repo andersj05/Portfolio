@@ -101,9 +101,9 @@ const blogFiles = (await readdir(blogSourceDirectory))
 const posts = await Promise.all(
   blogFiles.map(async (filename) => {
     const slug = filename.slice(0, -3);
-    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) {
+    if (!/^[a-z0-9]+(?:[-_][a-z0-9]+)*$/.test(slug)) {
       throw new Error(
-        `${filename} must use a lowercase, hyphen-separated filename.`,
+        `${filename} must use a lowercase filename with words separated by hyphens or underscores.`,
       );
     }
 
