@@ -111,7 +111,7 @@ test('blog page is accessible and does not overflow on mobile', async ({
 });
 
 test('renders a Markdown post as a standalone page', async ({ page }) => {
-  await page.goto('/blog/01.html');
+  await page.goto('/blog/anthropic_opus_5_eval.html');
 
   await expect(
     page.getByRole('heading', {

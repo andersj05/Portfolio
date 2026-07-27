@@ -24,8 +24,8 @@ See [DEVELOPMENT.md](DEVELOPMENT.md) for the delivery plan and
 
 ## Writing blog posts
 
-Add a lowercase, hyphen-separated Markdown file to `blogs/`. Start from Create a
-lowercase Markdown file such as `blogs/my-first-post.md` and keep the front
+Add a lowercase Markdown file to `blogs/`, using hyphens or underscores between
+words. Start from a file such as `blogs/my-first-post.md` and keep the front
 matter at the top:
 
 ```md
