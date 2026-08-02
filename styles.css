@@ -486,15 +486,10 @@ h1 {
   font-size: 0.64rem;
 }
 
-.project-row a,
-.project-link-disabled {
+.project-row a {
   font-family: var(--mono);
   font-size: 0.62rem;
   font-weight: 700;
-}
-
-.project-link-disabled {
-  color: var(--muted);
 }
 
 .project-row a span {
