@@ -19,6 +19,7 @@ test('required source, template, blog, and media files exist', async () => {
       'styles.css',
       'github_profile.JPG',
       'og.png',
+      'reports/the-toll-road-moves.pdf',
       'blogs/anthropic_opus_5_eval.md',
       'templates/blog-post.html',
     ].map((file) => access(new URL(file, root))),
