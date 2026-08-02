@@ -11,7 +11,7 @@ test('renders the portfolio shell and working navigation', async ({ page }) => {
     page.getByRole('heading', { level: 1, name: 'Anders Jensen' }),
   ).toBeVisible();
 
-  for (const name of ['About', 'Projects']) {
+  for (const name of ['Home', 'Projects']) {
     const link = page.getByRole('navigation').getByRole('link', { name });
     await expect(link).toBeVisible();
     await expect(page.locator(await link.getAttribute('href'))).toHaveCount(1);
