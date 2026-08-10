@@ -4,10 +4,10 @@ date: '2026-07-24'
 description: 'ARC-AGI-3 eval was gamed'
 ---
 
-After looking into Opus 5’s 30.2% score on ARC-AGI-3, I think Anthropic is
-RL-maxxing. Its system card says researchers reviewed ~1.5 million RL episodes
-from the final training phase, across thousands of environments. Still, the jump
-from Opus 4.8’s 1.5% feels weird.
+After looking into Opus 5’s 30.2% score on ARC-AGI-3, I suspect Anthropic may be
+heavily optimizing through RL. Its system card says researchers reviewed ~1.5
+million RL episodes from the final training phase, across thousands of
+environments. Still, the jump from Opus 4.8’s 1.5% deserves closer scrutiny.
 
 There is a rumor that Anthropic paid humans to write out their chain of thought
 while solving similar problems, although I have not found any evidence. If we

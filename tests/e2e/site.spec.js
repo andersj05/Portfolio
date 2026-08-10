@@ -17,11 +17,11 @@ test('renders the portfolio shell and working navigation', async ({ page }) => {
     await expect(page.locator(await link.getAttribute('href'))).toHaveCount(1);
   }
 
-  await page
-    .getByRole('navigation')
-    .getByRole('link', { name: 'Blog' })
-    .click();
-  await expect(page).toHaveURL(/blog\.html$/);
+  await expect(
+    page.getByRole('navigation').getByRole('link', { name: 'Blog' }),
+  ).toHaveCount(0);
+
+  await page.goto('/blog.html');
   await expect(
     page.getByRole('heading', { level: 1, name: 'Blog' }),
   ).toBeVisible();
