@@ -13,9 +13,9 @@ unwind these positions quickly, block trades started showing up and most people
 don't realize it's fairly easy to contact major holders of these equities and
 find if they are selling..... which they weren't.
 
-It was ovbious that a large fund was in immediate need of liquidity and there
-from process of elimation it was 100% Situational Awareness, anyway it was easy
-for multiple funds to short these stocks and cause a panic.
+It was obvious that a large fund was in immediate need of liquidity and there
+from process of elimination it was 100% Situational Awareness, anyway it was
+easy for multiple funds to short these stocks and cause a panic.
 
-Classic tale of getting deystroyed by vol, because of the private stakes he
-lives to see another day...
+Classic tale of getting destroyed by vol, because of the private stakes he lives
+to see another day...
