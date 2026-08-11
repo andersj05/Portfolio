@@ -24,7 +24,7 @@ test('renders the portfolio shell and working navigation', async ({ page }) => {
   await expect(
     page.getByRole('heading', { level: 1, name: 'Selected projects' }),
   ).toBeVisible();
-  await expect(page.locator('.project-detail')).toHaveCount(3);
+  await expect(page.locator('.project-detail')).toHaveCount(4);
 
   await page.goto('/blog.html');
   await expect(

@@ -910,6 +910,17 @@ h1 {
   .portfolio-console {
     align-content: center;
   }
+
+  .home-page .project-row {
+    min-height: 45px;
+    padding-block: 0.38rem;
+  }
+
+  .home-page .project-row p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
 @media (width <= 880px) {

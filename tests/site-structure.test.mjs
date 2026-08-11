@@ -23,7 +23,8 @@ test('required source, template, blog, and media files exist', async () => {
       'styles.css',
       'github_profile.JPG',
       'og.png',
-      'project-images/llm-lab.png',
+      'project-images/alpha-orchestration.png',
+      'project-images/kernelcubed.png',
       'project-images/analystprep.png',
       'project-images/toll-road-report.png',
       'reports/the-toll-road-moves.pdf',
@@ -92,7 +93,7 @@ test('home navigation exposes blog and dedicated projects pages', () => {
   assert.match(projectsPage, /<h1>Selected projects<\/h1>/);
   assert.equal(
     [...projectsPage.matchAll(/<article class="project-detail">/g)].length,
-    3,
+    4,
   );
 });
 
