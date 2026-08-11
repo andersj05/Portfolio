@@ -11,15 +11,20 @@ test('renders the portfolio shell and working navigation', async ({ page }) => {
     page.getByRole('heading', { level: 1, name: 'Anders Jensen' }),
   ).toBeVisible();
 
-  for (const name of ['Home', 'Projects']) {
+  for (const name of ['Home', 'Projects', 'Blog']) {
     const link = page.getByRole('navigation').getByRole('link', { name });
     await expect(link).toBeVisible();
-    await expect(page.locator(await link.getAttribute('href'))).toHaveCount(1);
   }
 
+  await page
+    .getByRole('navigation')
+    .getByRole('link', { name: 'Projects' })
+    .click();
+  await expect(page).toHaveURL(/\/projects\.html$/);
   await expect(
-    page.getByRole('navigation').getByRole('link', { name: 'Blog' }),
-  ).toHaveCount(0);
+    page.getByRole('heading', { level: 1, name: 'Selected projects' }),
+  ).toBeVisible();
+  await expect(page.locator('.project-detail')).toHaveCount(3);
 
   await page.goto('/blog.html');
   await expect(
@@ -28,6 +33,24 @@ test('renders the portfolio shell and working navigation', async ({ page }) => {
   await expect(
     page.getByRole('link', { name: /Anthropic Is RL Maxxing Opus 5/i }),
   ).toBeVisible();
+});
+
+test('projects page is accessible and does not overflow on mobile', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/projects.html');
+
+  const results = await new AxeBuilder({ page })
+    .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+    .analyze();
+  const dimensions = await page.evaluate(() => ({
+    clientWidth: document.documentElement.clientWidth,
+    scrollWidth: document.documentElement.scrollWidth,
+  }));
+
+  expect(results.violations).toEqual([]);
+  expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth);
 });
 
 test('has no detectable WCAG A or AA accessibility violations', async ({

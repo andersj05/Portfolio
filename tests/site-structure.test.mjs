@@ -6,19 +6,26 @@ const root = new URL('../', import.meta.url);
 const output = new URL('../dist/', import.meta.url);
 const sourceHtml = await readFile(new URL('index.html', root), 'utf8');
 const builtPages = await Promise.all(
-  ['index.html', 'blog.html', 'blog/anthropic_opus_5_eval.html'].map(
-    async (path) => [path, await readFile(new URL(path, output), 'utf8')],
-  ),
+  [
+    'index.html',
+    'projects.html',
+    'blog.html',
+    'blog/anthropic_opus_5_eval.html',
+  ].map(async (path) => [path, await readFile(new URL(path, output), 'utf8')]),
 );
 
 test('required source, template, blog, and media files exist', async () => {
   await Promise.all(
     [
       'index.html',
+      'projects.html',
       'blog.html',
       'styles.css',
       'github_profile.JPG',
       'og.png',
+      'project-images/llm-lab.png',
+      'project-images/analystprep.png',
+      'project-images/toll-road-report.png',
       'reports/the-toll-road-moves.pdf',
       'blogs/anthropic_opus_5_eval.md',
       'templates/blog-post.html',
@@ -68,11 +75,25 @@ test('built local stylesheet, page, and media references resolve', async () => {
 });
 
 test('new-tab links prevent opener access', () => {
-  const links = [...sourceHtml.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)];
+  const links = builtPages.flatMap(([, source]) => [
+    ...source.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g),
+  ]);
 
   for (const link of links) {
     assert.match(link[0], /\srel="[^"]*\bnoopener\b[^"]*"/);
   }
+});
+
+test('home navigation exposes blog and dedicated projects pages', () => {
+  assert.match(sourceHtml, /href="projects\.html"[^>]*>[\s\S]*?Projects/);
+  assert.match(sourceHtml, /href="blog\.html"[^>]*>[\s\S]*?Blog/);
+
+  const projectsPage = builtPages.find(([file]) => file === 'projects.html')[1];
+  assert.match(projectsPage, /<h1>Selected projects<\/h1>/);
+  assert.equal(
+    [...projectsPage.matchAll(/<article class="project-detail">/g)].length,
+    3,
+  );
 });
 
 test('Markdown posts render and blog dates are newest first', () => {

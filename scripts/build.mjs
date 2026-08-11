@@ -13,11 +13,16 @@ const outputDirectory = new URL('dist/', projectRoot);
 const blogSourceDirectory = new URL('blogs/', projectRoot);
 const blogOutputDirectory = new URL('blog/', outputDirectory);
 const reportOutputDirectory = new URL('reports/', outputDirectory);
+const projectImageOutputDirectory = new URL('project-images/', outputDirectory);
 const staticFiles = [
   'index.html',
+  'projects.html',
   'styles.css',
   'github_profile.JPG',
   'og.png',
+  'project-images/llm-lab.png',
+  'project-images/analystprep.png',
+  'project-images/toll-road-report.png',
   'reports/the-toll-road-moves.pdf',
 ];
 
@@ -90,6 +95,7 @@ await rm(outputDirectory, { force: true, recursive: true });
 await mkdir(outputDirectory, { recursive: true });
 await mkdir(blogOutputDirectory, { recursive: true });
 await mkdir(reportOutputDirectory, { recursive: true });
+await mkdir(projectImageOutputDirectory, { recursive: true });
 
 await Promise.all(
   staticFiles.map((file) =>
