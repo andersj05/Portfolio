@@ -501,20 +501,6 @@ h1 {
   color: var(--terminal);
 }
 
-.console-signoff {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 0.58rem;
-}
-
-.console-signoff span:first-child {
-  color: var(--terminal);
-}
-
 .site-footer {
   min-height: 38px;
   padding: 0.65rem 0 0.8rem;
@@ -542,32 +528,11 @@ h1 {
 
 .projects-intro {
   padding: clamp(2.5rem, 7vh, 4.5rem) 0 clamp(1.5rem, 4vh, 2.25rem);
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 2rem;
   border-bottom: 1px solid var(--ink);
 }
 
 .projects-intro h1 {
-  margin-bottom: 0.55rem;
-}
-
-.projects-intro > div > p:last-child {
-  max-width: 620px;
   margin-bottom: 0;
-  color: var(--muted);
-  font-size: 0.82rem;
-}
-
-.project-count {
-  flex: 0 0 auto;
-  padding: 0.3rem 0.5rem;
-  border: 1px solid var(--line);
-  color: var(--terminal);
-  background: var(--panel);
-  font-family: var(--mono);
-  font-size: 0.58rem;
 }
 
 .project-details {
@@ -647,13 +612,6 @@ h1 {
   line-height: 1.25;
 }
 
-.project-copy h3 {
-  margin: 1.3rem 0 0.4rem;
-  color: var(--terminal);
-  font-family: var(--mono);
-  font-size: 0.65rem;
-}
-
 .project-copy p {
   margin-bottom: 0;
   color: var(--muted);
@@ -664,6 +622,10 @@ h1 {
 .project-copy .project-lede {
   color: #36423b;
   font-size: 0.84rem;
+}
+
+.project-copy .project-lede + p {
+  margin-top: 1.2rem;
 }
 
 .project-action {
@@ -986,12 +948,6 @@ h1 {
     padding-top: 1rem;
   }
 
-  .projects-intro {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
   .project-detail {
     padding: 2rem 0 2.5rem;
   }
@@ -1009,10 +965,6 @@ h1 {
   }
 
   .project-stack {
-    display: none;
-  }
-
-  .console-signoff span:last-child {
     display: none;
   }
 
