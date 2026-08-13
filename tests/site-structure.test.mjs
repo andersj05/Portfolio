@@ -97,7 +97,8 @@ test('home navigation exposes blog and dedicated projects pages', () => {
   );
   assert.doesNotMatch(sourceHtml, /portfolio: ready/);
   assert.equal(
-    [...projectsPage.matchAll(/<article class="project-detail">/g)].length,
+    [...projectsPage.matchAll(/<article class="project-detail(?: [^"]*)?">/g)]
+      .length,
     4,
   );
 });
