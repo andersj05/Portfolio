@@ -544,7 +544,7 @@ h1 {
   display: grid;
   grid-template-columns: minmax(220px, 0.5fr) minmax(0, 1.5fr);
   align-items: center;
-  gap: clamp(1.25rem, 3vw, 2.25rem);
+  gap: clamp(1.25rem, 12vw, 7rem);
   border-bottom: 1px solid var(--line);
 }
 
@@ -594,21 +594,27 @@ h1 {
 .project-visual {
   margin: 0;
   overflow: hidden;
+  width: 138%;
+  max-width: none;
+  margin-inline: auto;
+  position: relative;
+  z-index: 1;
   border: 1px solid var(--ink);
   background: white;
   box-shadow: 6px 6px 0 var(--terminal-soft);
 }
 
 .project-visual img {
+  display: block;
   width: 100%;
-  aspect-ratio: 2 / 1;
-  object-fit: cover;
+  height: auto;
+  max-width: 100%;
+  object-fit: initial;
 }
 
 .project-visual--square img,
 .project-visual--chart img {
-  aspect-ratio: 1;
-  object-fit: contain;
+  object-fit: initial;
 }
 
 .project-visual--chart img {
@@ -626,6 +632,8 @@ h1 {
 
 .project-copy {
   min-width: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .project-meta {
@@ -952,6 +960,11 @@ h1 {
   .project-detail {
     grid-template-columns: 1fr;
     gap: 1.25rem;
+  }
+
+  .project-visual {
+    width: 100%;
+    max-width: 100%;
   }
 
   .project-detail--text-only .project-copy {

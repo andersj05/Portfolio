@@ -85,9 +85,16 @@ test('new-tab links prevent opener access', () => {
   }
 });
 
-test('home navigation exposes blog and dedicated projects pages', () => {
+test('main navigation exposes projects without a blog tab', () => {
   assert.match(sourceHtml, /href="projects\.html"[^>]*>[\s\S]*?Projects/);
-  assert.match(sourceHtml, /href="blog\.html"[^>]*>[\s\S]*?Blog/);
+
+  for (const [file, source] of builtPages) {
+    assert.doesNotMatch(
+      source,
+      /<a href="(?:\.\.\/)?blog\.html"[^>]*>[\s\S]*?Blog/,
+      `Unexpected Blog navigation tab in ${file}`,
+    );
+  }
 
   const projectsPage = builtPages.find(([file]) => file === 'projects.html')[1];
   assert.match(projectsPage, /<h1>Selected projects<\/h1>/);
@@ -100,6 +107,11 @@ test('home navigation exposes blog and dedicated projects pages', () => {
     [...projectsPage.matchAll(/<article class="project-detail(?: [^"]*)?">/g)]
       .length,
     4,
+  );
+  assert.match(projectsPage, /<h2>CortexHarness<\/h2>/);
+  assert.match(
+    projectsPage,
+    /href="https:\/\/github\.com\/andersj05\/CortexHarness"/,
   );
 });
 

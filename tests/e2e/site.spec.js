@@ -11,10 +11,13 @@ test('renders the portfolio shell and working navigation', async ({ page }) => {
     page.getByRole('heading', { level: 1, name: 'Anders Jensen' }),
   ).toBeVisible();
 
-  for (const name of ['Home', 'Projects', 'Blog']) {
+  for (const name of ['Home', 'Projects']) {
     const link = page.getByRole('navigation').getByRole('link', { name });
     await expect(link).toBeVisible();
   }
+  await expect(
+    page.getByRole('navigation').getByRole('link', { name: 'Blog' }),
+  ).toHaveCount(0);
 
   await page
     .getByRole('navigation')
@@ -25,6 +28,9 @@ test('renders the portfolio shell and working navigation', async ({ page }) => {
     page.getByRole('heading', { level: 1, name: 'Selected projects' }),
   ).toBeVisible();
   await expect(page.locator('.project-detail')).toHaveCount(4);
+  await expect(
+    page.getByRole('heading', { level: 2, name: 'CortexHarness' }),
+  ).toBeVisible();
 
   await page.goto('/blog.html');
   await expect(
