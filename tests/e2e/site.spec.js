@@ -32,7 +32,7 @@ test('renders the portfolio shell and working navigation', async ({ page }) => {
     .click();
   await expect(page).toHaveURL(/\/projects\.html$/);
   await expect(
-    page.getByRole('heading', { level: 1, name: 'Selected projects' }),
+    page.getByRole('heading', { level: 1, name: 'Some projects' }),
   ).toBeVisible();
   await expect(page.locator('.project-detail')).toHaveCount(4);
   await expect(

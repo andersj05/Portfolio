@@ -86,7 +86,7 @@ test('main navigation exposes the projects page', () => {
   assert.match(sourceHtml, /href="projects\.html"[^>]*>[\s\S]*?Projects/);
 
   const projectsPage = builtPages.find(([file]) => file === 'projects.html')[1];
-  assert.match(projectsPage, /<h1>Selected projects<\/h1>/);
+  assert.match(projectsPage, /<h1>Some projects<\/h1>/);
   assert.doesNotMatch(
     projectsPage,
     /A few things I have built|04 projects \/ one page|What I did/,
