@@ -9,6 +9,7 @@ const builtPages = await Promise.all(
   [
     'index.html',
     'projects.html',
+    'substack.html',
     'blog.html',
     'blog/anthropic_opus_5_eval.html',
   ].map(async (path) => [path, await readFile(new URL(path, output), 'utf8')]),
@@ -19,6 +20,7 @@ test('required source, template, blog, and media files exist', async () => {
     [
       'index.html',
       'projects.html',
+      'substack.html',
       'blog.html',
       'styles.css',
       'github_profile.JPG',
@@ -113,6 +115,18 @@ test('main navigation exposes projects without a blog tab', () => {
     projectsPage,
     /href="https:\/\/github\.com\/andersj05\/CortexHarness"/,
   );
+});
+
+test('profile links to a private Substack request page', () => {
+  const substackPage = builtPages.find(([file]) => file === 'substack.html')[1];
+
+  assert.match(sourceHtml, /href="substack\.html"[^>]*>[\s\S]*?Substack/);
+  assert.match(
+    substackPage,
+    /<h1[^>]*>Substack available upon request\.<\/h1>/,
+  );
+  assert.doesNotMatch(substackPage, /href="https:\/\/[^\"]*substack\.com/);
+  assert.doesNotMatch(substackPage, /apjensen|keep my Substack separate/);
 });
 
 test('Markdown posts render and blog dates are newest first', () => {

@@ -19,6 +19,17 @@ test('renders the portfolio shell and working navigation', async ({ page }) => {
     page.getByRole('navigation').getByRole('link', { name: 'Blog' }),
   ).toHaveCount(0);
 
+  await page.getByRole('link', { name: 'Substack' }).click();
+  await expect(page).toHaveURL(/\/substack\.html$/);
+  await expect(
+    page.getByRole('heading', {
+      level: 1,
+      name: 'Substack available upon request.',
+    }),
+  ).toBeVisible();
+
+  await page.goto('/');
+
   await page
     .getByRole('navigation')
     .getByRole('link', { name: 'Projects' })

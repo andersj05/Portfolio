@@ -17,6 +17,7 @@ const projectImageOutputDirectory = new URL('project-images/', outputDirectory);
 const staticFiles = [
   'index.html',
   'projects.html',
+  'substack.html',
   'styles.css',
   'github_profile.JPG',
   'og.png',
