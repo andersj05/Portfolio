@@ -12,7 +12,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "npm run lint:html && npm run lint:css",
-    "lint:html": "html-validate index.html projects.html blog.html templates/blog-post.html",
+    "lint:html": "html-validate index.html projects.html substack.html blog.html templates/blog-post.html",
     "lint:css": "stylelint \"**/*.css\"",
     "test": "npm run build && node --test tests/site-structure.test.mjs",
     "test:e2e": "playwright test",

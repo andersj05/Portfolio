@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Request access to Anders Jensen's writing on Substack."
+    />
+    <meta name="theme-color" content="#f5f4ef" />
+    <meta property="og:title" content="Writing - Anders Jensen" />
+    <meta
+      property="og:description"
+      content="Request access to Anders Jensen's writing on Substack."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://andersj.dev/substack" />
+    <meta property="og:image" content="https://andersj.dev/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://andersj.dev/og.png" />
+    <title>Writing - Anders Jensen</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html">
+          <span class="prompt-mark" aria-hidden="true">&gt;_</span>
+          andersj.dev
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="index.html#about"
+            ><span aria-hidden="true">[</span>Home<span aria-hidden="true"
+              >]</span
+            ></a
+          >
+          <a href="projects.html"
+            ><span aria-hidden="true">[</span>Projects<span aria-hidden="true"
+              >]</span
+            ></a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main id="content" class="request-shell">
+      <section class="request-panel" aria-labelledby="page-title">
+        <div class="request-window-bar">
+          <span>substack.txt</span>
+          <span aria-hidden="true">private</span>
+        </div>
+        <div class="request-copy">
+          <p class="command-line">
+            <span aria-hidden="true">$</span> cat ./substack
+          </p>
+          <h1 id="page-title">Substack available upon request.</h1>
+          <a class="project-action" href="index.html"
+            >Back to portfolio <span aria-hidden="true">-&gt;</span></a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>&copy; <span data-current-year>2026</span> Anders Jensen</span>
+      <a href="index.html">cd ../portfolio</a>
+    </footer>
+
+    <script>
+      document.querySelectorAll('[data-current-year]').forEach((element) => {
+        element.textContent = new Date().getFullYear();
+      });
+    </script>
+  </body>
+</html>

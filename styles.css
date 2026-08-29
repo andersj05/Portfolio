@@ -259,7 +259,7 @@ img {
 
 .profile-links {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .profile-links a {
@@ -516,6 +516,52 @@ h1 {
 
 .site-footer a:hover {
   color: var(--terminal);
+}
+
+/* Private writing link */
+
+.request-shell {
+  width: min(720px, calc(100% - 44px));
+  min-height: calc(100svh - 91px);
+  padding: clamp(2.5rem, 10vh, 6rem) 0;
+  margin-inline: auto;
+}
+
+.request-panel {
+  border: 1px solid var(--ink);
+  background: var(--panel);
+  box-shadow: 8px 8px 0 var(--terminal-soft);
+}
+
+.request-window-bar {
+  min-height: 34px;
+  padding: 0.45rem 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--paper);
+  background: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+}
+
+.request-window-bar span:last-child {
+  color: #b7c2ba;
+}
+
+.request-copy {
+  padding: clamp(1.5rem, 5vw, 3rem);
+}
+
+.request-copy h1 {
+  max-width: 520px;
+  margin-bottom: 0.8rem;
+  font-size: clamp(1.6rem, 4vw, 2.35rem);
+}
+
+.request-copy .project-action {
+  margin-top: 1.25rem;
 }
 
 /* Projects */
@@ -949,7 +995,8 @@ h1 {
   }
 
   .blog-shell,
-  .article-shell {
+  .article-shell,
+  .request-shell {
     width: min(100% - 28px, 900px);
   }
 
