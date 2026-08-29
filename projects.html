@@ -56,27 +56,42 @@
       </header>
 
       <section class="project-details" id="projects" aria-label="Projects">
-        <article class="project-detail project-detail--text-only">
+        <article class="project-detail">
+          <figure class="project-visual">
+            <img
+              src="project-images/autoharness.png"
+              alt="AutoHarness terminal interface showing an agent conversation, workspace navigation, model, and context status"
+              width="1602"
+              height="972"
+            />
+            <figcaption>research prototype / autoharness</figcaption>
+          </figure>
           <div class="project-copy">
             <div class="project-meta">
               <span>01</span>
-              <span>AI Agents / Evaluation / Python</span>
+              <span>AI Agents / Decision Theory / Rust</span>
             </div>
-            <h2>CortexHarness</h2>
+            <h2>AutoHarness</h2>
             <p class="project-lede">
-              An observable research workbench for building and evaluating
-              graph-based agent harnesses with bounded, verifiable execution.
+              Researching a self-creating, continuously evolving agent harness
+              that can propose and test improvements to its own prompts,
+              policies, routing, tools, memory, and code.
             </p>
             <p>
-              I built sparse recurrent capability graphs, typed proposal and
-              validation boundaries, append-only hash-chained traces,
-              deterministic replay, live Gemma integration, and isolated
-              software-repair benchmark trials. A local browser workbench
-              surfaces run evidence, comparisons, and benchmark trajectories.
+              For my mathematics research paper, I am drawing on decision and
+              probability theory to study this as a sequential decision problem
+              under uncertainty: which change should an agent try, what evidence
+              makes it credible, and when does its expected utility justify
+              promotion? The current Rust prototype provides the experimental
+              substrate&mdash;durable and replayable traces, capability-scoped
+              tools, explicit permissions, provider-neutral execution,
+              reproducible evaluations, and gated promotion with
+              rollback&mdash;so adaptation can be measured rather than merely
+              claimed.
             </p>
             <a
               class="project-action"
-              href="https://github.com/andersj05/CortexHarness"
+              href="https://github.com/andersj05/AutoHarness"
               target="_blank"
               rel="noopener noreferrer"
               >View repository <span aria-hidden="true">-&gt;</span></a

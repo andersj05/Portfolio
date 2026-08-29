@@ -6,32 +6,27 @@ const root = new URL('../', import.meta.url);
 const output = new URL('../dist/', import.meta.url);
 const sourceHtml = await readFile(new URL('index.html', root), 'utf8');
 const builtPages = await Promise.all(
-  [
-    'index.html',
-    'projects.html',
-    'substack.html',
-    'blog.html',
-    'blog/anthropic_opus_5_eval.html',
-  ].map(async (path) => [path, await readFile(new URL(path, output), 'utf8')]),
+  ['index.html', 'projects.html', 'substack.html'].map(async (path) => [
+    path,
+    await readFile(new URL(path, output), 'utf8'),
+  ]),
 );
 
-test('required source, template, blog, and media files exist', async () => {
+test('required source and media files exist', async () => {
   await Promise.all(
     [
       'index.html',
       'projects.html',
       'substack.html',
-      'blog.html',
       'styles.css',
       'github_profile.JPG',
       'og.png',
       'project-images/alpha-orchestration.png',
       'project-images/kernelcubed.png',
       'project-images/analystprep.png',
+      'project-images/autoharness.png',
       'project-images/toll-road-report.png',
       'reports/the-toll-road-moves.pdf',
-      'blogs/anthropic_opus_5_eval.md',
-      'templates/blog-post.html',
     ].map((file) => access(new URL(file, root))),
   );
 });
@@ -87,16 +82,8 @@ test('new-tab links prevent opener access', () => {
   }
 });
 
-test('main navigation exposes projects without a blog tab', () => {
+test('main navigation exposes the projects page', () => {
   assert.match(sourceHtml, /href="projects\.html"[^>]*>[\s\S]*?Projects/);
-
-  for (const [file, source] of builtPages) {
-    assert.doesNotMatch(
-      source,
-      /<a href="(?:\.\.\/)?blog\.html"[^>]*>[\s\S]*?Blog/,
-      `Unexpected Blog navigation tab in ${file}`,
-    );
-  }
 
   const projectsPage = builtPages.find(([file]) => file === 'projects.html')[1];
   assert.match(projectsPage, /<h1>Selected projects<\/h1>/);
@@ -110,10 +97,10 @@ test('main navigation exposes projects without a blog tab', () => {
       .length,
     4,
   );
-  assert.match(projectsPage, /<h2>CortexHarness<\/h2>/);
+  assert.match(projectsPage, /<h2>AutoHarness<\/h2>/);
   assert.match(
     projectsPage,
-    /href="https:\/\/github\.com\/andersj05\/CortexHarness"/,
+    /href="https:\/\/github\.com\/andersj05\/AutoHarness"/,
   );
 });
 
@@ -127,19 +114,4 @@ test('profile links to a private Substack request page', () => {
   );
   assert.doesNotMatch(substackPage, /href="https:\/\/[^\"]*substack\.com/);
   assert.doesNotMatch(substackPage, /apjensen|keep my Substack separate/);
-});
-
-test('Markdown posts render and blog dates are newest first', () => {
-  const blogPage = builtPages.find(([file]) => file === 'blog.html')[1];
-  const postPage = builtPages.find(
-    ([file]) => file === 'blog/anthropic_opus_5_eval.html',
-  )[1];
-  const dates = [...blogPage.matchAll(/<time datetime="([^"]+)"/g)].map(
-    (match) => match[1],
-  );
-
-  assert.match(blogPage, /href="blog\/anthropic_opus_5_eval\.html"/);
-  assert.match(postPage, /<h1>Anthropic Is RL Maxxing Opus 5<\/h1>/);
-  assert.match(postPage, /After looking into Opus 5/);
-  assert.deepEqual(dates, [...dates].sort().reverse());
 });

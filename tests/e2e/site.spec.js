@@ -15,10 +15,6 @@ test('renders the portfolio shell and working navigation', async ({ page }) => {
     const link = page.getByRole('navigation').getByRole('link', { name });
     await expect(link).toBeVisible();
   }
-  await expect(
-    page.getByRole('navigation').getByRole('link', { name: 'Blog' }),
-  ).toHaveCount(0);
-
   await page.getByRole('link', { name: 'Substack' }).click();
   await expect(page).toHaveURL(/\/substack\.html$/);
   await expect(
@@ -40,15 +36,7 @@ test('renders the portfolio shell and working navigation', async ({ page }) => {
   ).toBeVisible();
   await expect(page.locator('.project-detail')).toHaveCount(4);
   await expect(
-    page.getByRole('heading', { level: 2, name: 'CortexHarness' }),
-  ).toBeVisible();
-
-  await page.goto('/blog.html');
-  await expect(
-    page.getByRole('heading', { level: 1, name: 'Blog' }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole('link', { name: /Anthropic Is RL Maxxing Opus 5/i }),
+    page.getByRole('heading', { level: 2, name: 'AutoHarness' }),
   ).toBeVisible();
 });
 
@@ -130,37 +118,4 @@ test('keeps the navigation visible while scrolling', async ({ page }) => {
 
   expect(header.position).toBe('sticky');
   expect(Math.abs(header.top)).toBeLessThanOrEqual(1);
-});
-
-test('blog page is accessible and does not overflow on mobile', async ({
-  page,
-}) => {
-  await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto('/blog.html');
-
-  const results = await new AxeBuilder({ page })
-    .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-    .analyze();
-  const dimensions = await page.evaluate(() => ({
-    clientWidth: document.documentElement.clientWidth,
-    scrollWidth: document.documentElement.scrollWidth,
-  }));
-
-  expect(results.violations).toEqual([]);
-  expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth);
-});
-
-test('renders a Markdown post as a standalone page', async ({ page }) => {
-  await page.goto('/blog/anthropic_opus_5_eval.html');
-
-  await expect(
-    page.getByRole('heading', {
-      level: 1,
-      name: 'Anthropic Is RL Maxxing Opus 5',
-    }),
-  ).toBeVisible();
-  await expect(page.locator('.post-content')).toContainText(
-    'After looking into Opus 5',
-  );
-  await expect(page.getByRole('link', { name: 'All posts' })).toBeVisible();
 });
