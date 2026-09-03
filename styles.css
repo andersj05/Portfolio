@@ -557,7 +557,7 @@ h1 {
 .request-copy h1 {
   max-width: 520px;
   margin-bottom: 0.8rem;
-  font-size: clamp(1.6rem, 4vw, 2.35rem);
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
 }
 
 .request-copy .project-action {
