@@ -56,46 +56,67 @@
       </header>
 
       <section class="project-details" id="projects" aria-label="Projects">
-        <article class="project-detail">
+        <article class="project-detail project-detail--wide-image">
           <figure class="project-visual">
             <img
-              src="project-images/autoharness.png"
-              alt="AutoHarness terminal interface showing an agent conversation, workspace navigation, model, and context status"
-              width="1602"
-              height="972"
+              src="project-images/computercat.png"
+              alt="ComputerCat's Windows XP-inspired chat window and pixel-art cat beside a Hugging Face model page, answering a question about the model"
+              width="1792"
+              height="1221"
             />
-            <figcaption>early terminal prototype / autoharness</figcaption>
+            <figcaption>desktop companion / computercat</figcaption>
           </figure>
           <div class="project-copy">
             <div class="project-meta">
               <span>01</span>
-              <span>AI Agents / Context Compaction / Rust</span>
+              <span>Electron / React / TypeScript</span>
             </div>
-            <h2>AutoHarness</h2>
+            <h2>ComputerCat</h2>
             <p class="project-lede">
-              My current research focuses on task-adaptive context compaction
-              for long-running coding agents: how can an agent shorten its
-              working history while preserving the information it needs to
-              finish a task?
+              A Windows XP-inspired AI desktop companion that brings chat,
+              on-demand screen context, and local voice input to a pixel-art cat
+              on your desktop.
             </p>
             <p>
-              I am investigating policies that condense completed subtasks and
-              retain unresolved requirements, relevant evidence, and details
-              needed for upcoming actions. A central question is what happens to
-              information needed much later: a summary can support the next step
-              yet lose a constraint that matters before the task is done.
-            </p>
-            <p>
-              AutoHarness is the Rust agent runtime supporting this research. I
-              plan to compare summarization, tool-output removal, and adaptive
-              policies on extended coding tasks, holding the model, tools, and
-              context budget fixed. I will measure task completion, token usage
-              and cost, elapsed time, and mistakes caused by lost information
-              across repeated compaction. This work is in progress.
+              I built it with Electron, React, TypeScript, and the Pi SDK to
+              help with what you are working on. It can read accessible window
+              text and screenshots when asked, research public web pages, and
+              help with everyday clipboard and file tasks. Conversations save
+              locally, and tool activity stays visible in the chat.
             </p>
             <a
               class="project-action"
-              href="https://github.com/andersj05/AutoHarness"
+              href="https://github.com/andersj05/ComputerCat"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View repository <span aria-hidden="true">-&gt;</span></a
+            >
+          </div>
+        </article>
+
+        <article class="project-detail project-detail--text-only">
+          <div class="project-copy">
+            <div class="project-meta">
+              <span>02</span>
+              <span>Agent Memory / Context Compaction / Python</span>
+            </div>
+            <h2>ContextResearch</h2>
+            <p class="project-lede">
+              How should an AI agent decide what to remember before it knows
+              what it will need later? My current research studies repeated
+              context compaction as new requirements emerge and memory becomes
+              more limited.
+            </p>
+            <p>
+              This is my university research project exploring how agents can
+              preserve useful context across long-running tasks. I am developing
+              mathematical models and experiments to understand what to keep,
+              what to forget, and when to recover information. The work is still
+              in progress.
+            </p>
+            <a
+              class="project-action"
+              href="https://github.com/andersj05/ContextResearch"
               target="_blank"
               rel="noopener noreferrer"
               >View repository <span aria-hidden="true">-&gt;</span></a
@@ -116,7 +137,7 @@
           </figure>
           <div class="project-copy">
             <div class="project-meta">
-              <span>02</span>
+              <span>03</span>
               <span>TypeScript / Browser Extension</span>
             </div>
             <h2>Pointnote</h2>
@@ -154,7 +175,7 @@
           </figure>
           <div class="project-copy">
             <div class="project-meta">
-              <span>03</span>
+              <span>04</span>
               <span>Macro Research / Python</span>
             </div>
             <h2>The Toll Road Moves</h2>
@@ -175,35 +196,6 @@
               rel="noopener noreferrer"
               type="application/pdf"
               >Read the report <span aria-hidden="true">-&gt;</span></a
-            >
-          </div>
-        </article>
-
-        <article class="project-detail project-detail--text-only">
-          <div class="project-copy">
-            <div class="project-meta">
-              <span>04</span>
-              <span>LLM Systems / CUDA / Benchmarking</span>
-            </div>
-            <h2>DecodeBench</h2>
-            <p class="project-lede">
-              A GPU inference research platform for Qwen3-family models,
-              combining validated serving paths, reproducible benchmarks, and
-              custom CUDA prototypes.
-            </p>
-            <p>
-              I use it to evaluate Qwen3.5 0.8B across Transformers and vLLM,
-              measuring latency, throughput, memory, token parity, continuous
-              batching, and multi-agent load. It also includes a custom Qwen3
-              decode-attention kernel and an experimental exact-window plus
-              compressed-memory path for long contexts.
-            </p>
-            <a
-              class="project-action"
-              href="https://github.com/andersj05/DecodeBench"
-              target="_blank"
-              rel="noopener noreferrer"
-              >View repository <span aria-hidden="true">-&gt;</span></a
             >
           </div>
         </article>

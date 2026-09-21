@@ -36,7 +36,7 @@ test('renders the portfolio shell and working navigation', async ({ page }) => {
   ).toBeVisible();
   await expect(page.locator('.project-detail')).toHaveCount(4);
   await expect(
-    page.getByRole('heading', { level: 2, name: 'AutoHarness' }),
+    page.getByRole('heading', { level: 2, name: 'ContextResearch' }),
   ).toBeVisible();
 });
 
