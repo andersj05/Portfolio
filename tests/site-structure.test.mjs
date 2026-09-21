@@ -24,7 +24,6 @@ test('required source and media files exist', async () => {
       'project-images/alpha-orchestration.png',
       'project-images/kernelcubed.png',
       'project-images/analystprep.png',
-      'project-images/autoharness.png',
       'project-images/pointnote.png',
       'project-images/toll-road-report.png',
       'reports/the-toll-road-moves.pdf',
@@ -98,10 +97,10 @@ test('main navigation exposes the projects page', () => {
       .length,
     4,
   );
-  assert.match(projectsPage, /<h2>AutoHarness<\/h2>/);
+  assert.match(projectsPage, /<h2>ContextResearch<\/h2>/);
   assert.match(
     projectsPage,
-    /href="https:\/\/github\.com\/andersj05\/AutoHarness"/,
+    /href="https:\/\/github\.com\/andersj05\/ContextResearch"/,
   );
 });
 

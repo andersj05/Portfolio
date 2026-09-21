@@ -643,7 +643,7 @@ h1 {
 }
 
 .project-detail--wide-image .project-visual {
-  width: 100%;
+  width: min(100%, 820px);
 }
 
 .project-detail--wide-image .project-copy {
@@ -652,28 +652,7 @@ h1 {
 
 .project-detail--text-only .project-copy {
   width: 100%;
-  display: grid;
-  grid-template-columns: minmax(200px, 0.65fr) minmax(0, 1.35fr);
-  column-gap: clamp(1.5rem, 4vw, 3rem);
-}
-
-.project-detail--text-only .project-meta {
-  grid-column: 1 / -1;
-}
-
-.project-detail--text-only .project-lede,
-.project-detail--text-only .project-lede + p {
-  grid-column: 2;
-}
-
-.project-detail--text-only .project-lede + p {
-  grid-row: 3;
-}
-
-.project-detail--text-only .project-action {
-  grid-row: 3;
-  grid-column: 1;
-  place-self: start;
+  max-width: 780px;
 }
 
 .project-visual {
@@ -830,7 +809,11 @@ h1 {
     width: min(100% - 28px, 1000px);
   }
 
-  .project-detail {
+  .project-detail,
+  .project-detail:nth-child(even):not(
+      .project-detail--text-only,
+      .project-detail--wide-image
+    ) {
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
@@ -838,10 +821,6 @@ h1 {
   .project-visual {
     width: 100%;
     max-width: 100%;
-  }
-
-  .project-detail--text-only .project-copy {
-    display: block;
   }
 
   .project-detail:nth-child(even) .project-visual,
