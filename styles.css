@@ -655,6 +655,19 @@ h1 {
   max-width: 780px;
 }
 
+.project-gallery {
+  width: min(100%, 820px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.35fr);
+  align-items: start;
+  gap: 1rem;
+}
+
+.project-gallery .project-visual {
+  width: 100%;
+  margin: 0;
+}
+
 .project-visual {
   margin: 0;
   overflow: hidden;
@@ -878,6 +891,16 @@ h1 {
 
   .project-row > a {
     grid-row: 1;
+  }
+}
+
+@media (width <= 700px) {
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .project-gallery .project-visual:first-child {
+    max-width: 420px;
   }
 }
 
